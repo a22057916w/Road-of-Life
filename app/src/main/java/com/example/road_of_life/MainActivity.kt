@@ -15,32 +15,17 @@ import com.example.road_of_life.ui.theme.RoadofLifeTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            RoadofLifeTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
+        // This contains the MapView in XML and needs to be called after the access token is configured.
+        setContentView(R.layout.activity_main)
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    RoadofLifeTheme {
-        Greeting("Android")
-    }
-}
+//@Preview
+//@Composable
+//fun MyLayoutPreview() {
+//    setContentView(R.layout.activity_main)
+//}
+//
+//fun setContentView(activityMain: Int) {
+//    setContentView(R.layout.activity_main)
+//}
